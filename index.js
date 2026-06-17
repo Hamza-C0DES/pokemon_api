@@ -9,11 +9,10 @@ app.get("https://pokeapi.co/api/v2/pokemon/ditto" , (req, res) => {
 
 
 
-
- fetch('ttps://api.nasahttps://pokeapi.co/api/v2/pokemon/ditto')
-  .then(response => response.json())
-   .then(response => console.log(response))
-  .catch(err => console.error(err));
+ fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
 
 
 
