@@ -12,21 +12,14 @@
 
 
 
- const res = await fetch('https://pokeapi.co/api/v2/pokemon/ditto') 
+ const res = await fetch('https://pokeapi.co/api/v2/pokemon/6') 
     const data = await res.json();
-    console.log(`Data:${data}`);
+    console.log("Data:",data);
+    const cryAudio = data.cries.latest;
+    const stats = data.stats[0]
+    console.log(cryAudio)
 
-//   const options = {
-//   method: 'POST',
-//   headers: {
-//     'Authorization': 'Bearer https://pokeapi.co/api/v2/version/15/'
-//   },
-//   body: JSON.stringify({
-//     name: "heartgold",
-//     rarity: "50",
-//   }),
-// };
-//     console.log(options);
+
 
 
 
