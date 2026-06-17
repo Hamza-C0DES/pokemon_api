@@ -4,11 +4,16 @@ const app = express()
 
 app.get("https://pokeapi.co/api/v2/pokemon/ditto" , (req, res) => {
     res.send();
-    
+
 })
 
 
 
+
+ fetch('ttps://api.nasahttps://pokeapi.co/api/v2/pokemon/ditto')
+  .then(response => response.json())
+   .then(response => console.log(response))
+  .catch(err => console.error(err));
 
 
 
