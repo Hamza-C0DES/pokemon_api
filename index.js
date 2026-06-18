@@ -23,26 +23,37 @@ console.log(`ID = ${id}`)
 
     const hints = [move, weight, height, abilities, types] // Array Containing All 5 Hints
 
-    app.get("/pokeguess/:guess/:guess2", (req, res) => {
-    const {guess, guess2} = req.params.guess;
-    
-    if (guess == name){
-        res.send(`You Win! 
-            <br> 
-            The correct answer is: ${name}.`);
-    }
+    // app.get("/pokeguess/guess", (req, res) => {
+    // const {guess} = req.params.guess;
 
-    else if (guess !== name){ 
-        console.log("Wrong Answer")
-        res.send(`Wrong Answer! 
-            <br>
-            Hint #1: Move = ${hints[0]}`);
-            
+
+    app.get("/pokeguess/hint/:n", (req, res) => {
+    const {n} = req.params;
+
+    const index = Number(n) - 1;
+
+    if (n > 5 || n < 1) {
+        console.log('this is your hint')
+        return res.send("Pick a hint number from 1 to 5")
+
     }
-    else if (guess2 !== name){
-        console.log("Wrong Answer")
-        res.send(`Hint #2: Move = ${hints[1]}`);    
-        }
+    
+    res.json({hint: hints[index]})
+
+    // if (guess == name){
+    //     res.send(`You Win! 
+    //         <br> 
+    //         The correct answer is: ${name}.`);
+    // }
+
+    // else (guess !== name){ 
+    //     console.log("Wrong Answer")
+    //     res.send(`Wrong Answer! 
+    //         <br>
+    //         Hint #1: Move = ${hints[0]}`);
+            
+    // }
+
     
 
     // const guess = params.guess;
