@@ -1,6 +1,6 @@
 
-// import express from 'express'
-// const app = express()
+import express from 'express'
+const app = express()
 
 // console.log("hello world");
 
@@ -19,7 +19,7 @@
     const stats = data.stats[0]
     console.log(cryAudio)
 
-
+    console.log(data.stats);
 
 
 
