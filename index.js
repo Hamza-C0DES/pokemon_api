@@ -20,8 +20,8 @@ console.log(id)
     if (guess == name){
         console.log("You Won");
     }else { 
-        const hint1 = data.moves[0].name
-        console.log("That is the wrong answer",hint1)
+        const hint1 = data.moves[0]
+        console.log("Wrong answer",hint1)
         
         
     }
