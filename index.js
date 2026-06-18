@@ -14,12 +14,19 @@ const app = express()
 
  const res = await fetch('https://pokeapi.co/api/v2/pokemon/6') 
     const data = await res.json();
-    console.log("Data:",data);
+    // console.log("Data:",data);
+    const moves = data.moves
     const cryAudio = data.cries.latest;
     const stats = data.stats[0]
     console.log(cryAudio)
 
+    console.log(Object.keys(data));
+    
+
     console.log(data.stats);
+    // console.log(Object.keys(pokemon.moves[0]));
+    console.log(Object.keys(pokemon.cries));
+    console.log(Object.keys(pokemon.types));
 
 
 
