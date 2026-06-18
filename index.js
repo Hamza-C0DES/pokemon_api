@@ -18,13 +18,16 @@ console.log(id)
     const guess = req.params.guess;
     
     if (guess == name){
-        console.log("You Won");
+
+        res.send("You Win",name);
     }else { 
         const hint1 = data.moves[0]
         console.log("Wrong answer",hint1)
+        res.send(hint1);
         
         
     }
+    
 
     // const guess = params.guess;
     // const guess = data.moves[1]
