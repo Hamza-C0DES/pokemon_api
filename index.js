@@ -9,13 +9,22 @@ const app = express()
 
 // })
 
-const id = 1;
+const id = Math.floor(Math.random() * 151) + 1;
+console.log(id)
  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`) 
     const data = await res.json();
+    const name = data.name
     app.get("/pokeguess/:guess", (req, res) => {
-    const params = req.params;
+    const guess = req.params.guess;
+    if (guess == name){
+        console.log("You Won");
+    }else { 
+        
+        
+    }
+
     // const guess = params.guess;
-    const guess = data.moves[1]
+    // const guess = data.moves[1]
 
     })
     // console.log("Data:",data);
@@ -26,7 +35,7 @@ const id = 1;
     // console.log(stats)
 
     // console.log(Object.keys(data));
-    console.log(data);
+    console.log(`Name: ${name}`);
     
 
     // console.log(data.stats);
