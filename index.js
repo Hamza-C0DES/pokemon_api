@@ -22,20 +22,27 @@ console.log(`ID = ${id}`)
     const types = data.types[0].type.name; // Hint 5 
 
     const hints = [move, weight, height, abilities, types] // Array Containing All 5 Hints
-    app.get("/pokeguess/:guess", (req, res) => {
-    const guess = req.params.guess;
+
+    app.get("/pokeguess/:guess/:guess2", (req, res) => {
+    const {guess, guess2} = req.params.guess;
     
     if (guess == name){
-
         res.send(`You Win! 
             <br> 
             The correct answer is: ${name}.`);
-    }else { 
-        console.log("Wrong answer",)
-        res.send();
-        
-        
     }
+
+    else if (guess !== name){ 
+        console.log("Wrong Answer")
+        res.send(`Wrong Answer! 
+            <br>
+            Hint #1: Move = ${hints[0]}`);
+            
+    }
+    else if (guess2 !== name){
+        console.log("Wrong Answer")
+        res.send(`Hint #2: Move = ${hints[1]}`);    
+        }
     
 
     // const guess = params.guess;
@@ -52,7 +59,7 @@ console.log(`ID = ${id}`)
     // console.log(Object.keys(data));
     console.log(`Name: ${name}`);
     
-    console.log(Object.keys(data));
+    // console.log(Object.keys(data)); // Shows the attributes //
     // console.log(data.stats);
     // console.log(Object.keys(data.moves[0]));
     // console.log(Object.keys(data.cries));
