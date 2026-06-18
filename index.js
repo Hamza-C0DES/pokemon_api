@@ -8,25 +8,25 @@ const app = express()
 //     res.send();
 
 // })
+ const id = 1;
 
-
-
-
- const res = await fetch('https://pokeapi.co/api/v2/pokemon/6') 
+ const res = await fetch(`https://pokeapi.co/api/v2/pokemon/{id}`) 
     const data = await res.json();
     // console.log("Data:",data);
-    const moves = data.moves
-    const cryAudio = data.cries.latest;
-    const stats = data.stats[0]
-    console.log(cryAudio)
+    const moves = data.moves[0];
+    // const cryAudio = data.cries.latest;
+    const features = data.abilities[0];
+    const stats = data.stats[0];
+    // console.log(stats)
 
-    console.log(Object.keys(data));
+    // console.log(Object.keys(data));
+    console.log(data);
     
 
-    console.log(data.stats);
-    console.log(Object.keys(data.moves[0]));
-    console.log(Object.keys(data.cries));
-    console.log(Object.keys(data.types));
+    // console.log(data.stats);
+    // console.log(Object.keys(data.moves[0]));
+    // console.log(Object.keys(data.cries));
+    // console.log(Object.keys(data.types));
 
 
 
