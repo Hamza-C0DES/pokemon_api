@@ -34,6 +34,6 @@ const app = express()
 // const game_id = Buffer.from(String(id)).toString("base64")
 
 // Server Setup
-// app.listen(3000, () => {
-//     console.log("Server Online")
-// });
+app.listen(3000, () => {
+    console.log("Server Online")
+});
