@@ -9,9 +9,15 @@ const app = express()
 
 // })
 
-
- const res = await fetch('https://pokeapi.co/api/v2/pokemon/name') 
+const id = 1;
+ const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`) 
     const data = await res.json();
+    app.get("/pokeguess/:guess", (req, res) => {
+    const params = req.params;
+    // const guess = params.guess;
+    const guess = data.moves[1]
+
+    })
     // console.log("Data:",data);
     const moves = data.moves[0];
     // const cryAudio = data.cries.latest;
