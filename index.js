@@ -16,9 +16,10 @@ console.log(id)
     const name = data.name
     app.get("/pokeguess/:guess", (req, res) => {
     const guess = req.params.guess;
+    const hint1 = data.moves[0]
     if (guess == name){
         console.log("You Won");
-    }else { 
+    }else { console.log(hint1)
         
         
     }
