@@ -10,20 +10,29 @@ const app = express()
 // })
 
 const id = Math.floor(Math.random() * 151) + 1;
-console.log(id)
+console.log(`ID = ${id}`)
  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`) 
     const data = await res.json();
-    const name = data.name
+    const name = data.name;
+
+    const move = data.moves[0].move.name; // Hint 1
+    const weight = data.weight; // Hint 2
+    const height = data.height; // Hint 3
+    const abilities = data.abilities[0].ability.name // Hint 4
+    const types = data.types[0].type.name; // Hint 5 
+
+    const hints = [move, weight, height, abilities, types] // Array Containing All 5 Hints
     app.get("/pokeguess/:guess", (req, res) => {
     const guess = req.params.guess;
     
     if (guess == name){
 
-        res.send("You Win",name);
+        res.send(`You Win! 
+            <br> 
+            The correct answer is: ${name}.`);
     }else { 
-        const hint1 = data.moves[0]
-        console.log("Wrong answer",hint1)
-        res.send(hint1);
+        console.log("Wrong answer",)
+        res.send();
         
         
     }
@@ -43,7 +52,7 @@ console.log(id)
     // console.log(Object.keys(data));
     console.log(`Name: ${name}`);
     
-
+    console.log(Object.keys(data));
     // console.log(data.stats);
     // console.log(Object.keys(data.moves[0]));
     // console.log(Object.keys(data.cries));
