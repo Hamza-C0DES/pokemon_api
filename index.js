@@ -24,9 +24,9 @@ const app = express()
     
 
     console.log(data.stats);
-    // console.log(Object.keys(pokemon.moves[0]));
-    console.log(Object.keys(pokemon.cries));
-    console.log(Object.keys(pokemon.types));
+    console.log(Object.keys(data.moves[0]));
+    console.log(Object.keys(data.cries));
+    console.log(Object.keys(data.types));
 
 
 
