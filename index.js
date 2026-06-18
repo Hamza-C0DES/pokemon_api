@@ -8,9 +8,9 @@ const app = express()
 //     res.send();
 
 // })
- const id = 1;
 
- const res = await fetch(`https://pokeapi.co/api/v2/pokemon/{id}`) 
+
+ const res = await fetch('https://pokeapi.co/api/v2/pokemon/name') 
     const data = await res.json();
     // console.log("Data:",data);
     const moves = data.moves[0];
